@@ -19,12 +19,16 @@
 
 	<properties>
 		<java.version>17</java.version>
-		<springdoc-openapi.version>1.6.7</springdoc-openapi.version>
+		<springdoc-openapi.version>1.6.8</springdoc-openapi.version>
+		<springdoc-openapi-native.version>1.6.8</springdoc-openapi-native.version>
 		<lombok.version>1.18.24</lombok.version>
 		<commons-codec.version>1.15</commons-codec.version>
 		<spring-native.version>0.11.4</spring-native.version>
+		<spring-boot-maven-plugin.version>2.6.7</spring-boot-maven-plugin.version>
 		<maven.compiler.version>3.10.1</maven.compiler.version>
 		<maven.surefire.version>2.22.2</maven.surefire.version>
+		<hibernate-enhance-maven-plugin.version>5.6.7.Final</hibernate-enhance-maven-plugin.version>
+		<native-image-maven-plugin.version>20.3.5</native-image-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -70,7 +74,7 @@
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-native</artifactId>
-			<version>1.6.8</version>
+			<version>${springdoc-openapi-native.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -121,7 +125,7 @@
 					<plugin>
 						<groupId>org.springframework.boot</groupId>
 						<artifactId>spring-boot-maven-plugin</artifactId>
-						<version>2.5.1</version>
+						<version>${spring-boot-maven-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>repackage</id>
@@ -187,7 +191,7 @@
 					<plugin>
 						<groupId>org.hibernate.orm.tooling</groupId>
 						<artifactId>hibernate-enhance-maven-plugin</artifactId>
-						<version>5.6.7.Final</version>
+						<version>${hibernate-enhance-maven-plugin.version}</version>
 						<executions>
 							<execution>
 								<id>enhance</id>
@@ -241,7 +245,7 @@
 					<plugin>
 						<groupId>org.graalvm.nativeimage</groupId>
 						<artifactId>native-image-maven-plugin</artifactId>
-						<version>20.3.5</version>
+						<version>${native-image-maven-plugin.version}</version>
 						<configuration>
 							<mainClass>com.github.wenqiglantz.service.customerservice.CustomerServiceApplication</mainClass>
 						</configuration>
@@ -258,5 +262,4 @@
 			</build>
 		</profile>
 	</profiles>
-
 </project>
